@@ -282,11 +282,11 @@ namespace InstamojoAPI
             }
             string queryString = "", stream = "";
 
-            if (string.IsNullOrEmpty(objPaymentOrderListRequest.id))
+            if (!string.IsNullOrEmpty(objPaymentOrderListRequest.id))
             {
                 queryString = "id=" + objPaymentOrderListRequest.id;
             }
-            if (string.IsNullOrEmpty(objPaymentOrderListRequest.transaction_id))
+            if (!string.IsNullOrEmpty(objPaymentOrderListRequest.transaction_id))
             {
                 string transQuery = "transaction_id=" + objPaymentOrderListRequest.transaction_id;
                 queryString += string.IsNullOrEmpty(queryString) ? transQuery : ("&" + transQuery);
